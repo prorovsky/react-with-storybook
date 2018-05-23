@@ -19,11 +19,8 @@ storiesOf('Button', module)
   ));
 
 storiesOf('Title', module)
-  .add('with text', () => (
-    <Title onClick={action('clicked')} text="text" />
-  ))
-  .add('with some emoji', () => (
-    <Title onClick={action('clicked')} text="😀 😎 👍 💯"/>
+  .add('with img', () => (
+    <Title onClick={action('clicked')} Text={Img} />
   ));
 
 storiesOf('Paragraph', module)
