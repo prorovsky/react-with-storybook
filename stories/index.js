@@ -20,7 +20,7 @@ storiesOf('Button', module)
 
 storiesOf('Title', module)
   .add('with img', () => (
-    <Title onClick={action('clicked')} Text={Img} />
+    <Title onClick={action('clicked')} text={() => Img} />
   ));
 
 storiesOf('Paragraph', module)
