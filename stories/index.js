@@ -6,39 +6,36 @@ import Title from '../components/Title';
 import Paragraph from '../components/Paragraph';
 import Modal from '../components/Modal';
 
-import Img from '../components/Img';
-
 const textParagraph = "some long and boring text nothing interesting here.";
+const lorem = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut odio tortor, iaculis vitae eros in, vestibulum posuere enim. Maecenas pulvinar pulvinar nibh, in porttitor odio tempus at.";
 
 storiesOf('Button', module)
-  .add('with text', () => (
-    <Button onClick={action('clicked')} label="text" />
+  .add('with text and click event', () => (
+    <Button label="text" click={() => alert('you click on me')}/>
   ))
   .add('with some emoji', () => (
-    <Button onClick={action('clicked')} label="😀 😎 👍 💯"/>
+    <Button label="😀 😎 👍 💯"/>
   ));
 
 storiesOf('Title', module)
-  .add('with img', () => (
-    <Title onClick={action('clicked')} text={() => Img} />
+  .add('title with span inside', () => (
+    <Title text={() => <span>Hello from span</span>} />
   ));
 
 storiesOf('Paragraph', module)
   .add('with text', () => (
-    <Paragraph onClick={action('clicked')} text={textParagraph} />
+    <Paragraph text={textParagraph} />
   ))
   .add('with some emoji', () => (
-    <Paragraph onClick={action('clicked')} text="😀 😎 👍 💯"/>
+    <Paragraph text="😀 😎 👍 💯"/>
   ));
 
 storiesOf('Modal window', module)
   .add('just modal window', () => (
-    <Modal />
+    <Modal layout={() => 
+      <div>
+        <Title text={() => "Title for modal"}/>
+        <Paragraph text={lorem}/>
+        <Button label="cancel" click={() => alert('your click "cancel"')} /><Button label="continue" click={() => alert('your click "continue"')}/> 
+      </div>} />
   ));
-
-
-
-// storiesOf('Img', module)
-//   .add('just image', () => (
-//     <Img />
-//   ));

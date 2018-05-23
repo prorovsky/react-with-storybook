@@ -6,13 +6,7 @@ import Button from './Button';
 
 class Modal extends React.Component {
     render() {
-        return (
-            <ModalStyled>
-                <Title />
-                <Paragraph />
-                <Button /><Button />
-            </ModalStyled>
-        )
+        return <ModalStyled>{this.props.layout()}</ModalStyled>
     }
 }
 
