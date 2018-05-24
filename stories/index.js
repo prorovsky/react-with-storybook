@@ -39,3 +39,18 @@ storiesOf('Modal window', module)
         <Button label="cancel" click={() => alert('your click "cancel"')} /><Button label="continue" click={() => alert('your click "continue"')}/> 
       </div>} />
   ));
+
+storiesOf('Modal window', module)
+  .add('modal window with image title and three buttons', () => (
+    <Modal layout={() => 
+      <div>
+        <Title text={() => <img src="./favicon.ico" />}/>
+        <Button 
+        label="cancel" click={() => alert('your click on "cancel"')} 
+        /><Button 
+        label="continue" click={() => alert('your click on "continue"')}
+        /><Button 
+        label="🐱‍💻🐱‍👤🐱‍👓" click={() => alert('your click on "cats"')}
+        /> 
+      </div>} />
+  ));
